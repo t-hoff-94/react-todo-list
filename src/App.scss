@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 100%);
+  color: #333;
+  font-family: 'Indie Flower', cursive;
+  min-height: 100vh;
+}
+.App {
+  padding-top: 45px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  h1 {
+    position: relative;
+  }
+}
+
+.tdl-box{
+  max-width: 50px;
+}
+
+ .header input {
+  border: 1px solid orange;
+  padding: 10px;
+  font-size: 16px;
+  width: 165px;
+}
+
+ .header button {
+  border-radius: 7px;
+  border: 1px solid orange;
+  color: #0066FF;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  margin-right: 0px;
+}
+
+.header button:hover {
+  background-color: lighten(orange, 22%);
+  cursor: pointer;
+}
+.todo-list {padding: 0;}
+
+.todo-list span {
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  transition: all 1s;
+  width: 100%;
+}
+
+.todo-list li {
+  color: #333;
+  border-bottom: 1px solid rgba(255,170,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  transition: all .5s;
+}
+.todo-list li button {
+  background: rgba(0,0,0,0.0);
+  border-radius: 50%;
+  border: rgba(0,0,0,0.0);
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  margin-left: 7px;
+  z-index: 5;
+}
+
+.tdl-box .x-eyes {
+  display: none;
+}
+.tdl-box .tdl {
+  transition: all .5s;
+}
+.todo-list li button:hover {
+  animation: 0.5s bounce infinite;
+  cursor: pointer;
+  .eye {
+    display: none;
+  }
+  .x-eyes {
+    fill: blue;
+    display: block;
+  }
+}
+
+ li span {
+  max-width: 90%;
+  transition: all .5s;
+  word-break: break-word;
+}
+
+li:hover span {
+  color: orange;
+}
+
+.list-trans-appear {
+  opacity: 0;
+}
+.list-trans-enter {
+  transform: rotateX(90deg);
+  opacity: 1;
+}
+
+.list-trans-enter.list-trans-enter-active {
+  opacity: 1;
+  transform: rotateX(0deg);
+  transition: all 500ms ease-in;
+}
+
+.list-trans-leave {
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+.list-trans-leave.list-trans-leave-active {
+  opacity: 0.01;
+  transition: all 300ms ease-in;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
